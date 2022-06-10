@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import * as S from './styled';
 import { useNavigate } from 'react-router-dom';
+import  Git  from "./GIT.png";
 
 export default function App() {
   const navigation = useNavigate();
@@ -22,7 +23,10 @@ export default function App() {
   return (
     <S.HomeContainer>
       <S.Content>
-        <S.Input className='userInput' placeholder='user' value={user} onChange={e => { setUser(e.target.value) }} />
+        <S.Image src={Git} alt='GitHub Logo' ></S.Image>
+      </S.Content>
+      <S.Content>
+        <S.Input className='userInput' placeholder='username' value={user} onChange={e => { setUser(e.target.value) }} />
         <S.Button type='button' onClick={handleSearch}>search</S.Button>
       </S.Content>
       {error ? <S.ErrorMsg>User Not Found, Try again</S.ErrorMsg> : ""}

@@ -43,3 +43,8 @@ export const ErrorMsg = styled.span`
     font-weight: 600;
     color: #ff1212;
 `
+
+export const Image = styled.img`
+    object-position: center;
+    margin-bottom: 0.5em;
+`
