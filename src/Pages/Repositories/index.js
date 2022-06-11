@@ -6,7 +6,7 @@ export default function Repositories() {
   const [repositories, setRepositories] = useState([]);
   const navigation = useNavigate();
   let x = 0;
-
+  
   useEffect(() => {
     let repositoriesName = localStorage.getItem("repositoriesName");
     if(repositoriesName !== null){
@@ -21,9 +21,7 @@ export default function Repositories() {
   return (
     <S.Container>
     <S.Title>GitHub Repositories</S.Title>
-      <S.List>
-        {repositories.map(repository => (<S.ListItem>Repositório {x}: {repository}</S.ListItem>))}
-      </S.List>
+      {repositories.map(repository => ((x++), <S.H3><S.A href={`https:github.com/${localStorage.getItem("user")}/${repository}`}>Repository {x}: {repository}</S.A></S.H3>))}
       <S.LinkHome to="/">Voltar</S.LinkHome>
     </S.Container>
   );

@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 export const slide = keyframes`
     0% {
         opacity: 0;
-        left: -100%;
+        transform: translateY(-100%);
     }
 
     100%{
         opacity: 1;
-        left: 0;
+        transform: translateY(0);
     }
 `
 
@@ -26,23 +26,23 @@ export const Title = styled.h1`
     color: #ff1212;
 `
 
-export const List = styled.ul`
-    list-style: none;
-    padding: 0;
-    font-family: "Roboto", sans-serif;
-    animation: ${slide} 2s ease-in-out;
-    position: relative;
-    `
-
-export const ListItem = styled.li`
+export const H3 = styled.h3`
     position: relative;
     font-size: 1.5em;
     padding: 0.5em;
     margin: .5em 0;
     color: #fff;
     background: #222222;
-    animation: ${slide} 2s ease-in-out;
-    `
+    animation: ${slide} 2s;
+`
+
+export const A = styled.a`
+    text-decoration: none;
+    color: #fff;
+    &:hover {
+        color: #006cdf; ;
+    }
+`
 
 export const LinkHome = styled(Link)`
     display: block;
@@ -53,4 +53,3 @@ export const LinkHome = styled(Link)`
     padding: 0.5rem 0;
     color: #fff;
 `
-
