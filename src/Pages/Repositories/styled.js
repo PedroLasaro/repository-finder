@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 
 export const slide = keyframes`
     0% {
-        opacity: 0;
-        transform: translateY(-100%);
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
     }
 
     100%{
-        opacity: 1;
-        transform: translateY(0);
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
     }
 `
 
@@ -17,6 +15,7 @@ export const Container = styled.div`
     width: 100%;
     max-width: 1120px;
     margin: 0 auto;
+    overflow: hidden;
 `
 
 export const Title = styled.h1`
@@ -30,10 +29,12 @@ export const H3 = styled.h3`
     position: relative;
     font-size: 1.5em;
     padding: 0.5em;
-    margin: .5em 0;
+    margin: .25em 0;
     color: #fff;
     background: #222222;
-    animation: ${slide} 2s;
+    animation: ${slide} 1s ease-in-out;
+    border-radius: 0.5em;
+    animation-fill-mode: backwards;
 `
 
 export const A = styled.a`

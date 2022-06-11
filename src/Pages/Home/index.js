@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import * as S from './styled';
 import { useNavigate } from 'react-router-dom';
-import  Git  from "./GIT.png";
+import Git  from "./GIT.png";
 
 export default function App() {
   const navigation = useNavigate();
