@@ -22,19 +22,18 @@ export const Title = styled.h1`
     text-align: center;
     font-size: 2em;
     font-family: "Roboto", sans-serif;
-    color: #ff1212;
+    color: #222;
 `
 
 export const H3 = styled.h3`
-    position: relative;
     font-size: 1.5em;
+    font-family: "Roboto", sans-serif;
     padding: 0.5em;
-    margin: .25em 0;
+    margin: .25em 0;;
     color: #fff;
-    background: #222222;
-    animation: ${slide} 1s ease-in-out;
+    background: #222;
+    animation: ${slide} .4s ease-in-out;
     border-radius: 0.5em;
-    animation-fill-mode: backwards;
 `
 
 export const A = styled.a`
@@ -50,7 +49,7 @@ export const LinkHome = styled(Link)`
     width: 4rem;
     text-align: center;
     margin: 2rem auto;
-    background: #000;
+    background: #222;
     padding: 0.5rem 0;
     color: #fff;
 `
