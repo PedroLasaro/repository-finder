@@ -19,8 +19,7 @@ export default function Repositories() {
       setLang(JSON.parse(repositoriesLang));
       setRepositories(JSON.parse(repositoriesName));
       setURL(JSON.parse(repositoriesURL));
-      console.log(url)
-      localStorage.removeItem("url")
+      localStorage.removeItem("url");
       localStorage.removeItem("repositoriesName");
       localStorage.removeItem("Language");
     }

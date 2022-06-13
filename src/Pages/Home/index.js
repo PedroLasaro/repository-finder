@@ -12,6 +12,7 @@ export default function App() {
   function handleSearch() {
     axios.get(`https://api.github.com/users/${user}/repos`)
       .then(response => {
+        setError(false)
         const repositories = response.data;
         const repositoriesName = [];
         const repositoriesLang = [];
