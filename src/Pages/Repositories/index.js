@@ -4,27 +4,41 @@ import * as S from "./styled";
 
 export default function Repositories() {
   const [repositories, setRepositories] = useState([]);
+  const [lang, setLang] = useState([]);
+  const [url, setURL] = useState("");
   const navigation = useNavigate();
   let x = 0;
 
   useEffect(() => {
     let repositoriesName = localStorage.getItem("repositoriesName");
-    if (repositoriesName !== null) {
-      repositoriesName = JSON.parse(repositoriesName);
-      setRepositories(repositoriesName);
-      localStorage.removeItem("repositoriesName");
+    let repositoriesLang = localStorage.getItem("language");
+    let repositoriesURL = localStorage.getItem("url");
+    if (repositoriesName === null) {
+      navigation("/", {replace: true});
     } else {
-      navigation("/", { replace: true });
+      setLang(JSON.parse(repositoriesLang));
+      setRepositories(JSON.parse(repositoriesName));
+      setURL(JSON.parse(repositoriesURL));
+      console.log(url)
+      localStorage.removeItem("url")
+      localStorage.removeItem("repositoriesName");
+      localStorage.removeItem("Language");
     }
   }, [navigation]);
+
+  function language(){
+    if (lang[x-1] === null){
+      return "null"
+    }else{return lang[x-1]}
+  }
 
   return (
     <S.Container>
       <S.Title>GitHub Repositories</S.Title>
       <S.Container>
-        {repositories.map(repository => (++x && <S.H3><S.A href={`https:github.com/${localStorage.getItem("user")}/${repository}`}>Repository {x}: {repository}</S.A></S.H3>))}
+        {repositories.map(repository => (++x && <S.H3 hreg={url[x-1]}><S.A href={url[x-1]}>Repository {x}: {repository} <S.P>language: {language()}</S.P> </S.A></S.H3>))}
       </S.Container>
-      <S.LinkHome to="/">Voltar</S.LinkHome>
+      <S.LinkHome to="/">Return</S.LinkHome>
     </S.Container>
   );
 }

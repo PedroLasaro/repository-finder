@@ -36,6 +36,12 @@ export const H3 = styled.h3`
     border-radius: 0.5em;
 `
 
+export const P = styled.h3`
+    font-size: .5em;
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+`
+
 export const A = styled.a`
     text-decoration: none;
     color: #fff;

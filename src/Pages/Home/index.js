@@ -14,10 +14,20 @@ export default function App() {
       .then(response => {
         const repositories = response.data;
         const repositoriesName = [];
-        repositories.map(repository => repositoriesName.push(repository.name));
+        const repositoriesLang = [];
+        const repositoriesURL = [];
+        repositories.map(repository => repositoriesName.push(repository.name) &&
+                                       repositoriesLang.push(repository.language) &&
+                                       repositoriesURL.push(repository.html_url));
+        if (repositoriesName.length === 0){
+            // work only if the user don't have a repository
+            setError(true)
+        }else{
         localStorage.setItem('repositoriesName', JSON.stringify(repositoriesName));
-        localStorage.setItem('user', user);
+        localStorage.setItem('language', JSON.stringify(repositoriesLang));
+        localStorage.setItem('url', JSON.stringify(repositoriesURL))
         navigation('./Repositories', { replace: true });
+        }
       }).catch(err => { setError(true) });
   }
 
@@ -36,7 +46,7 @@ export default function App() {
         <S.Input className='userInput' placeholder='username' value={user} onKeyDown={handleKeyDown} onChange={e => { setUser(e.target.value) }} />
         <S.Button type='button' onClick={handleSearch}>search</S.Button>
       </S.Content>
-      {error ? <S.ErrorMsg>User Not Found, Try again</S.ErrorMsg> : ""}
+      {error ? <S.ErrorMsg>User Not Found or Don't Have Repositories, Try again</S.ErrorMsg> : ""}
     </S.HomeContainer>
   );
 }
