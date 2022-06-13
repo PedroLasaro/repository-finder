@@ -32,7 +32,7 @@ export const H3 = styled.h3`
     margin: .25em 0;;
     color: #fff;
     background: #222;
-    animation: ${slide} 1s ease-in-out;
+    animation: ${slide} .5s ease-in-out;
     border-radius: 0.5em;
 `
 
