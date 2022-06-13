@@ -30,7 +30,7 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-    height: 2.2em;
+    height: 2.15em;
     width: 5.2em;
     border: 1px solid #aaa;
     border-radius: 0 1rem 1rem 0;
