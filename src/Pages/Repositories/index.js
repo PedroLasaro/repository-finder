@@ -36,7 +36,8 @@ export default function Repositories() {
     <S.Container>
       <S.Title>GitHub Repositories</S.Title>
       <S.Container>
-        {repositories.map(repository => (++x && <S.H3 hreg={url[x-1]}><S.A href={url[x-1]}>Repository {x}: {repository} <S.P>language: {language()}</S.P> </S.A></S.H3>))}
+        {repositories.map(repository => (++x &&
+         <S.H3><S.A href={url[x-1]}>Repository {x}: {repository} <S.P>language: {language()}</S.P> </S.A></S.H3>))}
       </S.Container>
       <S.LinkHome to="/">Return</S.LinkHome>
     </S.Container>
