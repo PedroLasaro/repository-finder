@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Repositories from "./Pages/Repositories";
 import Home from "./Pages/Home";
 
-export default function Routess() {
+export default function Routers() {
     return (
         <BrowserRouter>
           <Routes>
