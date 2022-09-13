@@ -3,6 +3,7 @@ import axios from 'axios';
 import * as S from './styled';
 import { useNavigate } from 'react-router-dom';
 import Git from "./GIT.png";
+import {BottomContent} from "./styled";
 
 export default function App() {
   const navigation = useNavigate();
@@ -48,6 +49,9 @@ export default function App() {
         <S.Button type='button' onClick={handleSearch}>search</S.Button>
       </S.Content>
       {error ? <S.ErrorMsg>User Not Found or Don't Have Repositories, Try again</S.ErrorMsg> : ""}
+        <BottomContent>
+            <S.AboutMe as="a" href='https://github.com/PedroLasaro'>About Me</S.AboutMe>
+        </BottomContent>
     </S.HomeContainer>
   );
 }

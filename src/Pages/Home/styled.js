@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.div`
     height: 90vh;
-    display: flex;
+    display: grid;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -13,6 +13,22 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+`;
+
+export const BottomContent = styled.div`
+    display: grid;
+    align-items: south;
+    justify-content: space-around;
+`;
+
+export const AboutMe = styled.button`
+    display: flex;
+    width: 4rem;
+    text-align: center;
+    margin: auto;
+    background: #222;
+    padding: auto;
+    color: #fff;
 `;
 
 export const Input = styled.input`
