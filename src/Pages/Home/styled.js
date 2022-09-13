@@ -4,7 +4,7 @@ export const HomeContainer = styled.div`
     height: 90vh;
     display: grid;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 `;
 
@@ -16,19 +16,20 @@ export const Content = styled.div`
 `;
 
 export const BottomContent = styled.div`
+    position: relative;
     display: grid;
-    align-items: south;
-    justify-content: space-around;
+    bottom: 10px;
+    justify-content: center;
 `;
 
 export const AboutMe = styled.button`
-    display: flex;
-    width: 4rem;
+    display: inline-block;
+    width: 5rem;
     text-align: center;
     margin: auto;
-    background: #222;
+    background: #fff;
     padding: auto;
-    color: #fff;
+    color: #222;
 `;
 
 export const Input = styled.input`
